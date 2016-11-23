@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { StoreDataService } from '../../providers/store-data-service';
+import { StoreDetailsPage } from '../store-details/store-details';
 declare var firebase: any;
 
 /*
@@ -30,10 +31,10 @@ export class StoreListPagePage {
   }
 
   storeSelected(event, item) {
-    // this.navCtrl.push(ItemDetailsPage, {
-    //   item: item
-    // });
-    console.log('some store selected');
+    this.navCtrl.push(StoreDetailsPage, {
+      item: item
+    });
+    console.log('some store selected' + item);
   }
 
   createStore($event, item) {
