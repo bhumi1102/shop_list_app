@@ -28,6 +28,10 @@ export class StoreListPagePage {
         this.stores = data;
         console.log(this.stores);
       });
+
+    // firebase.database().ref('/commonStores').on('child_added', (snapshot) => {
+    //   this.stores.push(snapshot.val());
+    // });
   }
 
   storeSelected(event, item) {
@@ -42,8 +46,8 @@ export class StoreListPagePage {
 
     // var newChildRef = firebase.database().ref('/commonStores').push();
     // console.log('new id is:' + newChildRef.key);
-
-    firebase.database().ref('/commonStores/5').set(this.storeName);
+    var index = this.stores.length    
+    firebase.database().ref("/commonStores/"+index).set(this.storeName);
     //subscribe to child_added event to update the store list view
     // firebase.database().ref('/commonStores').on('child_added', (snapshot) => {
     //   this.stores.push(snapshot.val());
