@@ -15,9 +15,8 @@
 
 <ion-content padding>
   <ion-list>
-    <button ion-item *ngFor="let store of stores | async" (click)="storeSelected($event, store.$value)">
-      <!--{{store}}-->
-      {{store.$value}}
+    <button ion-item *ngFor="let store of stores | async" (click)="storeSelected($event, store.$key)">
+      {{store.$key}}
     </button>
   </ion-list>
   <ion-item>

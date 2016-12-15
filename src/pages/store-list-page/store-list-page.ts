@@ -53,8 +53,9 @@ export class StoreListPagePage {
     // console.log('new id is:' + newChildRef.key);
     // var index = this.stores.map.length;   
     // firebase.database().ref("/commonStores/"+index).set(this.storeName);
+    firebase.database().ref('/commonStores').child(this.storeName).set("null");
 
-    this.stores.push(this.storeName);
+    // this.stores.push(this.storeName);
 
 
     //subscribe to child_added event to update the store list view
