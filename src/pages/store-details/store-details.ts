@@ -28,8 +28,8 @@ export class StoreDetailsPage {
     console.log(this.items);
   }
 
-  createStore($event, item) {
-    console.log('name of new store to persist: ' + this.itemName);
+  addItem($event, item) {
+    console.log('name of new item to persist: ' + this.itemName);
 
     this.items.push(this.itemName);
   }
