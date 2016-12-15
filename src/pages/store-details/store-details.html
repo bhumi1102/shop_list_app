@@ -14,5 +14,16 @@
 
 
 <ion-content padding>
-
+  <ion-list>
+    <ion-item *ngFor="let item of items | async">
+      {{item.$value}}
+    </ion-item>
+  </ion-list>
+  <ion-item>
+    <!--<ion-label color="primary">Store Name</ion-label>-->
+    <ion-input placeholder="new item" [(ngModel)] = "itemName"></ion-input>
+  </ion-item>
+  <p>
+    <button ion-button color="primary" (click)="addItem($event, item)">Add Item</button>
+  </p>
 </ion-content>
