@@ -13,18 +13,19 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
   templateUrl: 'store-details.html'
 })
 export class StoreDetailsPage {
-  selectedItem: any;
+  selectedStore: any;
   items: FirebaseListObservable<any[]>;
+  stores: FirebaseListObservable<any[]>;
   itemName: string;
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               af: AngularFire) {
     // If we navigated to this page, we will have an item available as a nav param
-    this.selectedItem = navParams.get('item');
-    var url = '/commonStores/'+this.selectedItem;
-    console.log(url);
+    this.selectedStore = navParams.get('item');
+    var url = '/commonStores/'+this.selectedStore;
     this.items = af.database.list(url);
+    this.stores = af.database.list('/commonStores');
     console.log(this.items);
   }
 
@@ -32,6 +33,14 @@ export class StoreDetailsPage {
     console.log('name of new item to persist: ' + this.itemName);
 
     this.items.push(this.itemName);
+  }
+
+  clearList($event, item) {
+    console.log('removing items from ' + this.selectedStore);
+    //todo: archieve the list of items purchased before removing from UI
+
+    this.items.remove();
+    firebase.database().ref('/commonStores').child(this.selectedStore).set("null");
   }
 
   ionViewDidLoad() {

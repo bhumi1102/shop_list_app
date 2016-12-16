@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title> {{selectedItem}} Store Details</ion-title>
+    <ion-title> {{selectedStore}} Store Details</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -25,5 +25,8 @@
   </ion-item>
   <p>
     <button ion-button color="primary" (click)="addItem($event, item)">Add Item</button>
+  </p>
+  <p>
+    <button ion-button color="primary" (click)="clearList($event, item)">Clear List</button>
   </p>
 </ion-content>
