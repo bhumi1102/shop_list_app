@@ -46,7 +46,7 @@ export class StoreListPagePage {
     console.log('some store selected' + item);
   }
 
-  createStore($event, item) {
+  createStore() {
     console.log('name of new store to persist: ' + this.storeName);
 
     // var newChildRef = firebase.database().ref('/commonStores').push();

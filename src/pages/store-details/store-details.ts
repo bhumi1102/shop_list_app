@@ -29,13 +29,13 @@ export class StoreDetailsPage {
     console.log(this.items);
   }
 
-  addItem($event, item) {
+  addItem() {
     console.log('name of new item to persist: ' + this.itemName);
 
     this.items.push(this.itemName);
   }
 
-  clearList($event, item) {
+  clearList() {
     console.log('removing items from ' + this.selectedStore);
     //todo: archieve the list of items purchased before removing from UI
 
