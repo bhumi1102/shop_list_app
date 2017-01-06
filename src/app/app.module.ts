@@ -4,9 +4,6 @@ import { AngularFireModule } from 'angularfire2';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { MyApp } from './app.component';
-import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
-import { ItemDetailsPage } from '../pages/item-details/item-details';
-import { ListPage } from '../pages/list/list';
 import { StoreListPagePage } from '../pages/store-list-page/store-list-page';
 import { StoreDetailsPage } from '../pages/store-details/store-details';
 
@@ -21,9 +18,6 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     MyApp,
-    HelloIonicPage,
-    ItemDetailsPage,
-    ListPage,
     StoreListPagePage,
     StoreDetailsPage
   ],
@@ -35,9 +29,6 @@ export const firebaseConfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HelloIonicPage,
-    ItemDetailsPage,
-    ListPage,
     StoreListPagePage,
     StoreDetailsPage
   ],
