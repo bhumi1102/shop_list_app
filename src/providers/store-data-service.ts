@@ -33,8 +33,6 @@ export class StoreDataService {
       this.http.get('https://shop-list-8f175.firebaseio.com/.json')
         .map(res => res.json())
         .subscribe(data => {
-          // we've got back the raw data, now generate the core schedule data
-          // and save the data for later reference
           this.data = data.commonStores;
           resolve(this.data);
         });
