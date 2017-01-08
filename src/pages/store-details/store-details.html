@@ -7,6 +7,7 @@
   <ion-list>
     <ion-item *ngFor="let item of items | async">
       {{item.$value}}
+      <button ion-button (click)="removeItem(item.$key)">X</button>
     </ion-item>
   </ion-list>
   <ion-item>

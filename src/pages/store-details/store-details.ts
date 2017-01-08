@@ -24,7 +24,13 @@ export class StoreDetailsPage {
 
   addItem() {
     this.items.push(this.itemName);
+    this.itemName = undefined;
   }
+
+  removeItem(itemKey) {
+    console.log("removing: " + itemKey);
+    this.items.remove(itemKey);
+  } 
 
   clearList() {
     console.log('removing items from ' + this.selectedStore);
