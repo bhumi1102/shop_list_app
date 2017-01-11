@@ -19,7 +19,6 @@ export class StoreDetailsPage {
     var url = '/commonStores/'+this.selectedStore;
     this.items = af.database.list(url);
     this.stores = af.database.list('/commonStores');
-    console.log(this.items);
   }
 
   addItem() {
@@ -28,19 +27,13 @@ export class StoreDetailsPage {
   }
 
   removeItem(itemKey) {
-    console.log("removing: " + itemKey);
     this.items.remove(itemKey);
   } 
 
   clearList() {
-    console.log('removing items from ' + this.selectedStore);
     //todo: archieve the list of items purchased before removing from UI
     this.items.remove();
     firebase.database().ref('/commonStores').child(this.selectedStore).set("null");
-  }
-
-  ionViewDidLoad() {
-    console.log('Hello StoreDetailsPage Page');
   }
 
 }

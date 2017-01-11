@@ -16,7 +16,6 @@ export class StoreListPagePage {
   storeName: string
 
   constructor(public navCtrl: NavController, 
-              public storeDataService: StoreDataService,
               af: AngularFire) {
     
     this.stores = af.database.list('/commonStores');
@@ -26,11 +25,9 @@ export class StoreListPagePage {
     this.navCtrl.push(StoreDetailsPage, {
       item: item
     });
-    console.log('some store selected: ' + item);
   }
 
   createStore() {
-    console.log('name of new store to persist: ' + this.storeName);
     firebase.database().ref('/commonStores').child(this.storeName).set("null");
   }
 
